@@ -1,0 +1,8 @@
+$def with (imdb, people)
+<ul>
+$for person, movies in people:
+    <li><a href="$:imdb.get_imdbURL(person)">$person</a><ul>
+    $for movie, roles in movies:
+        <li><a href="$:imdb.get_imdbURL(movie)">$movie</a>: $roles</li>
+    </ul></li>
+</ul>
