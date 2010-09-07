@@ -34,8 +34,8 @@ class search:
             return render.search(my_search)
         else:
             my_select = select_form()
-            my_select['a'].args = imdbintersect.search(imdb, my_search['a'].value)
-            my_select['b'].args = imdbintersect.search(imdb, my_search['b'].value)
+            my_select['a'].args = imdbintersect.simple_search(imdb, my_search['a'].value)
+            my_select['b'].args = imdbintersect.simple_search(imdb, my_search['b'].value)
             return render.select(my_select)
 
 class intersect:
