@@ -1,7 +1,15 @@
-import os, os.path, sys
+# imdbintersect - intersect movie casts
+#
+# Copyright (c) 2010, Alan Briolat
+# MIT licensed - see LICENSE
+
+# WSGI environment hacks
+import os
+import os.path
+import sys
 os.chdir(os.path.abspath(os.path.dirname(__file__)))
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-print >> sys.stderr, sys.path
+# IMDbPY touches sys.stdin, mod_wsgi doesn't like it...
 import StringIO
 _stdin = sys.stdin
 sys.stdin = StringIO.StringIO('')
@@ -27,7 +35,8 @@ render = web.template.render('templates/', base='layout')
 search_form = form.Form(form.Textbox('a', description='Search 1:'),
                         form.Textbox('b', description='Search 2:'),
                         validators=[
-                            form.Validator('Must supply 2 search terms', lambda i: i.a and i.b)
+                            form.Validator('Must supply 2 search terms',
+                                           lambda i: i.a and i.b)
                         ])
 
 select_form = form.Form(form.Dropdown('a', description='Search 1:', args=[]),

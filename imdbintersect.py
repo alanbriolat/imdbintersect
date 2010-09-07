@@ -1,6 +1,12 @@
+# imdbintersect - intersect movie casts
+#
+# Copyright (c) 2010, Alan Briolat
+# MIT licensed - see LICENSE
+
 def simple_search(imdb, search):
     """Get search results as ``(id, title)`` pairs."""
     return [(m.getID(), m['long imdb title']) for m in imdb.search_movie(search)]
+
 
 def intersect(movies):
     """Intersect the casts of a list of movies.
