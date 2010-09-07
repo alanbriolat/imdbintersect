@@ -15,7 +15,8 @@ imdb = IMDb()
 import imdbintersect
 
 urls = (
-    '/', 'search',
+    '/', 'index',
+    '/search', 'search',
     '/intersect', 'intersect',
 )
 
@@ -32,12 +33,14 @@ search_form = form.Form(form.Textbox('a', description='Search 1:'),
 select_form = form.Form(form.Dropdown('a', description='Search 1:', args=[]),
                         form.Dropdown('b', description='Search 2:', args=[]))
 
-class search:
+
+class index:
     def GET(self):
         my_search = search_form()
         return render.search(my_search)
 
-    def POST(self):
+class search:
+    def GET(self):
         my_search = search_form()
         if not my_search.validates():
             return render.search(my_search)
