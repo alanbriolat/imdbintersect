@@ -1,6 +1,6 @@
 def simple_search(imdb, search):
     """Get search results as ``(id, title)`` pairs."""
-    return [(m.getID(), m['title']) for m in imdb.search_movie(search)]
+    return [(m.getID(), m['long imdb title']) for m in imdb.search_movie(search)]
 
 def intersect(movies):
     """Intersect the casts of a list of movies.

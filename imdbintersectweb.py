@@ -21,7 +21,7 @@ urls = (
 
 app = web.application(urls, globals(), autoreload=False)
 application = app.wsgifunc()
-render = web.template.render('templates/')
+render = web.template.render('templates/', base='layout')
 
 search_form = form.Form(form.Textbox('a', description='Search 1:'),
                         form.Textbox('b', description='Search 2:'),
