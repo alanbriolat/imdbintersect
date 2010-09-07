@@ -1,3 +1,11 @@
+import os, os.path, sys
+os.chdir(os.path.abspath(os.path.dirname(__file__)))
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+print >> sys.stderr, sys.path
+import StringIO
+_stdin = sys.stdin
+sys.stdin = StringIO.StringIO('')
+
 import web
 from web import form
 
@@ -11,7 +19,8 @@ urls = (
     '/intersect', 'intersect',
 )
 
-app = web.application(urls, globals())
+app = web.application(urls, globals(), autoreload=False)
+application = app.wsgifunc()
 render = web.template.render('templates/')
 
 search_form = form.Form(form.Textbox('a', description='Search 1:'),
