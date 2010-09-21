@@ -31,5 +31,13 @@ Library
 ``imdbintersect.py`` contains the main ``intersect`` algorithm, plus other
 useful things.  The source is documented, read it!
 
+Known issues
+------------
+
+* For some reason, movie search results are messed up when running the webapp through mod_wsgi, but 
+  not when running the CLI or standalone web.py app, on the same machine with the same code.  If 
+  anybody knows of mod_wsgi messing up the Python environment in ways which might cause this, please 
+  let me know!
+
 
 .. _web.py: http://webpy.org/
