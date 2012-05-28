@@ -1,6 +1,12 @@
 imdbintersect - intersect movie casts
 =====================================
 
+**This project is redundant - it turns out IMDb actually created this
+feature back in February 2010, 7 months before I did.  I attribute this
+duplication to the very low visibility of the feature and the fact that
+I'd been considering creating this project for about 2 years previously.
+Use the official tool here: http://www.imdb.com/search/common.**
+
 A tool for finding out who has been in all of a set of movies.  Useful for
 those times where you want to confirm a suspicion that you recognise somebody
 in a movie, you don't know who they are, but you know something else they've
@@ -35,9 +41,7 @@ Known issues
 ------------
 
 * For some reason, movie search results are messed up when running the webapp through mod_wsgi, but 
-  not when running the CLI or standalone web.py app, on the same machine with the same code.  If 
-  anybody knows of mod_wsgi messing up the Python environment in ways which might cause this, please 
-  let me know!
+  not when running the CLI or standalone web.py app, on the same machine with the same code.
 
 
 .. _web.py: http://webpy.org/
